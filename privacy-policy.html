@@ -9,7 +9,7 @@
   <meta property="og:title" content="Politique de confidentialité — AnonForge" />
   <meta property="og:description" content="Aucune donnée collectée, tout reste local. Application open-source sous licence Apache 2.0." />
   <style>
-    :root{
+    :root {
       --bg:#0f0f0f;
       --text:#e0e0e0;
       --muted:#bdbdbd;
@@ -17,26 +17,97 @@
       --maxw:900px;
       --radius:10px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Roboto,Arial;background:var(--bg);color:var(--text);padding:20px}
-    .wrap{max-width:var(--maxw);margin:0 auto}
-    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-    a{color:var(--accent);text-decoration:none}
-    main{background:#0b0b0b;padding:18px;border-radius:10px}
-    h1{margin-top:0}
-    p{color:var(--muted)}
-    ul{color:var(--muted)}
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
-    @media (max-width:600px){body{padding:14px}}
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+      padding:20px;
+    }
+    .wrap { max-width:var(--maxw); margin:0 auto; }
+    header {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:2rem;
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo {
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:#111;
+      padding:6px;
+    }
+    .logo img { width:100%; height:100%; }
+    nav a {
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:16px;
+      font-size:15px;
+    }
+    nav a:hover { color:var(--text); }
+    main {
+      background:#0b0b0b;
+      padding:1.5rem;
+      border-radius:var(--radius);
+      border:1px solid #333;
+    }
+    h1 { margin-top:0; font-size:2.2rem; }
+    h2 { color:var(--accent); margin:2rem 0 1rem; font-size:1.5rem; }
+    p, li { color:var(--muted); margin-bottom:1rem; }
+    ul { margin-left:1.5rem; }
+    .success-list li { list-style:none; padding-left:1.8rem; position:relative; }
+    .success-list li::before { content:"✅ "; position:absolute; left:0; }
+    footer {
+      margin-top:3rem;
+      padding-top:2rem;
+      border-top:1px solid #333;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .contact-links {
+      display:flex;
+      justify-content:center;
+      gap:1.5rem;
+      margin:1.5rem 0;
+      flex-wrap:wrap;
+    }
+    .contact-links a {
+      padding:0.5rem 1rem;
+      background:#121212;
+      border:1px solid #333;
+      border-radius:8px;
+    }
+    @media (max-width:600px) {
+      body { padding:14px; }
+      h1 { font-size:1.8rem; }
+      main { padding:1rem; }
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div style="display:flex;align-items:center;gap:10px">
-        <img src="assets/anonforge_icon.svg" alt="" style="width:44px;height:44px;border-radius:8px"/>
-        <div style="font-weight:700">AnonForge</div>
-      </div>
+      <a class="brand" href="index.html">
+        <span class="logo">
+          <img src="assets/anonforge_icon.svg" alt="Logo AnonForge" />
+        </span>
+        <div>
+          <div style="font-weight:700">AnonForge</div>
+          <div style="font-size:13px;color:var(--muted)">Identités temporaires privées</div>
+        </div>
+      </a>
       <nav>
         <a href="index.html">Accueil</a>
       </nav>
@@ -44,32 +115,46 @@
 
     <main role="main" aria-labelledby="pp-title">
       <h1 id="pp-title">Politique de confidentialité</h1>
+      <p><strong>Version 1.0 — Dernière mise à jour : 31 janvier 2025</strong></p>
 
-      <p><strong>Version :</strong> 1.0 — Dernière mise à jour : 2026</p>
+      <p>AnonForge est une application Android <strong>100% gratuite, open-source et hors-ligne</strong>.</p>
 
       <h2>Résumé</h2>
-      <p>AnonForge ne collecte aucune donnée personnelle. L'application fonctionne entièrement hors‑ligne : toutes les identités et données sont générées et stockées localement sur votre appareil. Il n'y a aucun suivi, aucun envoi de journaux, et aucune intégration d'outils d'analyse externes.</p>
-
-      <h2>Collecte et traitement des données</h2>
-      <ul>
-        <li><strong>Aucune donnée collectée :</strong> AnonForge ne transfère ni n'enregistre des données utilisateur sur des serveurs distants par défaut.</li>
-        <li><strong>Stockage local :</strong> Les identités générées restent sur votre appareil. Supprimez‑les manuellement si vous le souhaitez.</li>
-        <li><strong>Cookies / trackers :</strong> Aucun cookie de suivi, pixel ou SDK d'analyse n'est intégré.</li>
+      <ul class="success-list">
+        <li>Aucune donnée personnelle n'est collectée ou transmise.</li>
+        <li>Tout reste sur votre appareil (génération, stockage, alias).</li>
+        <li>Pas de tracking, pas d'analytics, pas de cookies.</li>
+        <li>Open-source sous licence Apache-2.0 — code auditable.</li>
       </ul>
 
-      <h2>Licence et code source</h2>
-      <p>Le code source est public et distribué sous licence Apache‑2.0. Vous pouvez consulter le dépôt et vérifier le comportement du logiciel.</p>
-      <p><a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">Licence Apache 2.0</a></p>
+      <h2>Stockage et chiffrement</h2>
+      <ul>
+        <li>Base de données locale chiffrée avec SQLCipher (AES-256).</li>
+        <li>Clés cryptographiques gérées via Android Keystore.</li>
+        <li>Effacement mémoire après utilisation des données sensibles.</li>
+      </ul>
+
+      <h2>Alias externes (email & téléphone)</h2>
+      <p>Les alias email (SimpleLogin) et téléphone (Hushed, OnOff, Sonetel) sont gérés par des services tiers que vous configurez vous-même. AnonForge n'a jamais accès à vos comptes ni à vos données réelles. Les clés API sont stockées chiffrées localement.</p>
+
+      <h2>Dons volontaires</h2>
+      <p>Les dons sont entièrement volontaires et gérés par Stripe (nous ne voyons jamais vos coordonnées bancaires). Aucun avantage ou limitation n'est lié aux dons — l'app reste gratuite et complète pour tous. Les dons ne sont pas déductibles fiscalement (vers un particulier).</p>
 
       <h2>Conformité au RGPD</h2>
-      <p>Étant donné qu'AnonForge ne collecte pas de données personnelles par défaut, les obligations relatives au traitement externe sont minimisées. Si vous exportez, synchronisez ou envoyez des identités via des services tiers, ces services peuvent collecter des données et relèvent de la responsabilité de l'utilisateur. Pour toute question liée aux droits (accès, rectification, suppression), contactez le projet à l'adresse fournie.</p>
+      <p>Pas de traitement de données personnelles. Si vous utilisez des services tiers pour aliases, ces services relèvent de leur propre politique.</p>
 
       <h2>Contact</h2>
-      <p>Pour toute demande relative à la confidentialité, vous pouvez contacter via le projet.
+      <p>Pour toute demande relative à la confidentialité :</p>
+      <div class="contact-links">
+        <a href="https://github.com/AnonForge-EU/anonforge/issues" target="_blank" rel="noopener">📝 Ouvrir une Issue GitHub</a>
+        <a href="mailto:privacy@anonforge.eu">✉️ privacy@anonforge.eu</a>
+      </div>
+
+      <p><a href="index.html">Retour à l'accueil</a></p>
     </main>
 
     <footer>
-      © 2026 AnonForge — Aucune donnée collectée par défaut • <a href="index.html">Retour</a>
+      © 2025 AnonForge — <a href="index.html">Accueil</a>
     </footer>
   </div>
 </body>
