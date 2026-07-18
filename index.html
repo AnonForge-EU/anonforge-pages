@@ -4,13 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>AnonForge — Identités temporaires privées</title>
-  <meta name="description" content="Générez des identités temporaires sécurisées pour protéger votre vie privée. 100% offline, gratuit, open-source." />
+  <meta name="description" content="Inscrivez-vous aux newsletters, essais gratuits et forums sans donner votre vraie identité. Profils jetables chiffrés sur votre téléphone. Offline par défaut, gratuit, open-source." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://anonforge-eu.github.io/anonforge-pages/" />
+  <link rel="icon" href="assets/anonforge_icon.svg" type="image/svg+xml" />
   <meta property="og:title" content="AnonForge — Identités temporaires privées" />
-  <meta property="og:description" content="Générez des identités temporaires sécurisées pour protéger votre vie privée. 100% offline, gratuit, open-source." />
+  <meta property="og:description" content="Inscrivez-vous aux newsletters, essais gratuits et forums sans donner votre vraie identité. Offline par défaut, gratuit, open-source." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://anonforge-eu.github.io/anonforge-pages/" />
   <meta property="og:image" content="https://anonforge-eu.github.io/anonforge-pages/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AnonForge — Identités temporaires privées" />
+  <meta name="twitter:description" content="Inscrivez-vous aux newsletters, essais gratuits et forums sans donner votre vraie identité. Offline par défaut, gratuit, open-source." />
+  <meta name="twitter:image" content="https://anonforge-eu.github.io/anonforge-pages/assets/og-image.png" />
   <style>
     :root{
       --bg:#0f0f0f;
@@ -75,7 +81,7 @@
     /* Features */
     .features{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:1rem;
       margin-top:2rem;
     }
@@ -148,14 +154,15 @@
 
     <!-- Alert Banner -->
     <div class="alert-banner">
-      <span class="stat">700+ millions</span>
-      <p>de données françaises exposées en 2025 — ne soyez pas la prochaine victime.</p>
+      <span class="stat">Des centaines de millions</span>
+      <p>de données personnelles exposées par les fuites en France depuis 2024 (France Travail, Free, opérateurs de tiers payant…) — ne soyez pas la prochaine victime.</p>
     </div>
 
     <main class="hero" role="main" aria-labelledby="main-title">
       <section>
-        <h1 id="main-title">Protégez votre identité</h1>
-        <p class="lead">Générez des profils temporaires sécurisés pour vos inscriptions. 100% offline, gratuit, open-source.</p>
+        <h1 id="main-title">Inscrivez-vous sans donner votre vraie identité</h1>
+        <p class="lead">Newsletters, essais gratuits, forums, comptes de test… Générez un profil jetable crédible (nom, adresse, date de naissance, alias email) et gardez vos vraies données pour vous. Offline par défaut, gratuit, open-source.</p>
+        <p style="margin-top:10px;color:var(--muted);font-size:13px">Pour les inscriptions du quotidien qui n'ont pas vraiment besoin de vous connaître — pas pour les démarches officielles (banque, administration, santé).</p>
 
         <div class="buttons" role="group" aria-label="Actions principales">
           <a class="btn" href="https://github.com/AnonForge-EU/anonforge/releases/latest" target="_blank" rel="noopener noreferrer">📥 Télécharger l'APK</a>
@@ -164,17 +171,19 @@
         </div>
 
         <div class="badges">
-          <img src="https://img.shields.io/github/downloads/AnonForge-EU/anonforge/total?style=flat-square&logo=android&color=3DDC84" alt="Downloads" />
+          <img src="https://img.shields.io/github/v/release/AnonForge-EU/anonforge?style=flat-square&logo=android&color=3DDC84" alt="Dernière release" />
+          <img src="https://img.shields.io/github/downloads/AnonForge-EU/anonforge/total?style=flat-square&color=blue" alt="Downloads" />
           <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
-          <img src="https://img.shields.io/badge/Android-8.0%2B-brightgreen?style=flat-square&logo=android" alt="Android 8.0+" />
+          <img src="https://img.shields.io/badge/Android-10%2B-brightgreen?style=flat-square&logo=android" alt="Android 10+" />
         </div>
       </section>
 
       <aside class="card" aria-labelledby="quick-info">
         <h3 id="quick-info">🛡️ Zéro collecte</h3>
-        <p>Tout reste sur votre appareil. Pas d'inscription, pas de compte, pas de tracking.</p>
-        <p><strong>Chiffrement :</strong> AES-256-GCM + SQLCipher</p>
+        <p>Tout reste sur votre appareil. Pas d'inscription, pas de compte, pas de tracking. Réseau uniquement si vous activez les alias SimpleLogin.</p>
+        <p><strong>Chiffrement :</strong> SQLCipher (AES-256) + Android Keystore</p>
         <p><strong>Auth :</strong> Biométrie ou PIN</p>
+        <p><strong>Version :</strong> v1.2.1 · Android 10+</p>
         <p style="margin-top:12px;font-size:13px">
           <a href="https://github.com/AnonForge-EU/anonforge/releases/latest" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">→ Dernière version sur GitHub</a>
         </p>
@@ -186,17 +195,34 @@
       <div class="feature">
         <div class="feature-icon">🎭</div>
         <h3>Identités réalistes</h3>
-        <p>Noms, adresses, dates de naissance crédibles. Multi-nationalité.</p>
+        <p>Noms, adresses, dates de naissance crédibles. Multi-nationalité (FR, EN, DE). Saisie manuelle possible.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">📧</div>
         <h3>Alias email</h3>
-        <p>Intégration SimpleLogin pour des alias qui fonctionnent vraiment.</p>
+        <p>Intégration SimpleLogin (optionnelle) pour des alias qui fonctionnent vraiment.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🔐</div>
         <h3>Coffre chiffré</h3>
-        <p>Vos identités protégées par AES-256. Biométrie ou PIN.</p>
+        <p>Vos identités protégées par SQLCipher (AES-256). Recherche, tri, biométrie ou PIN.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📦</div>
+        <h3>Export chiffré</h3>
+        <p>Sauvegarde protégée par mot de passe pour migrer d'appareil. Expiration automatique des profils temporaires.</p>
+      </div>
+    </section>
+
+    <!-- Install Guide -->
+    <section style="margin-top:2rem" aria-labelledby="install-title">
+      <div class="card" style="max-width:none">
+        <h3 id="install-title">📲 Installer l'APK en 3 étapes</h3>
+        <ol style="margin:8px 0 0 1.2rem;line-height:1.9">
+          <li><a href="https://github.com/AnonForge-EU/anonforge/releases/latest" target="_blank" rel="noopener noreferrer" style="color:var(--accent)">Téléchargez le fichier <strong>.apk</strong></a> depuis la dernière release GitHub.</li>
+          <li>Autorisez l'installation depuis des <strong>sources inconnues</strong> quand Android le demande (une seule fois).</li>
+          <li>Ouvrez le fichier téléchargé — c'est installé. Les mises à jour se font par-dessus, sans perte de données.</li>
+        </ol>
       </div>
     </section>
 
@@ -214,9 +240,9 @@
     </section>
 
     <footer>
-      © 2025 AnonForge — 
-      <a href="privacy-policy.html">Confidentialité</a> • 
-      <a href="why-anonforge.html">Pourquoi AnonForge</a> • 
+      © 2025–2026 AnonForge —
+      <a href="privacy-policy.html">Confidentialité</a> •
+      <a href="why-anonforge.html">Pourquoi AnonForge</a> •
       <a href="https://github.com/AnonForge-EU/anonforge" target="_blank" rel="noopener noreferrer">GitHub</a>
     </footer>
   </div>

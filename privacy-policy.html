@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Politique de confidentialité — AnonForge</title>
-  <meta name="description" content="Politique de confidentialité d'AnonForge — aucune donnée collectée, tout en local, pas de suivi." />
+  <meta name="description" content="Politique de confidentialité d'AnonForge — aucune donnée collectée, stockage local chiffré, pas de suivi." />
   <meta name="robots" content="index, follow" />
+  <link rel="icon" href="assets/anonforge_icon.svg" type="image/svg+xml" />
   <meta property="og:title" content="Politique de confidentialité — AnonForge" />
   <meta property="og:description" content="Aucune donnée collectée, tout reste local. Application open-source sous licence Apache 2.0." />
   <style>
@@ -110,32 +111,38 @@
       </a>
       <nav>
         <a href="index.html">Accueil</a>
+        <a href="why-anonforge.html">Pourquoi</a>
       </nav>
     </header>
 
     <main role="main" aria-labelledby="pp-title">
       <h1 id="pp-title">Politique de confidentialité</h1>
-      <p><strong>Version 1.0 — Dernière mise à jour : 31 janvier 2025</strong></p>
+      <p><strong>Version 1.1 — Dernière mise à jour : juillet 2026</strong> (alignée sur la <a href="https://github.com/AnonForge-EU/anonforge/blob/main/PRIVACY.md" target="_blank" rel="noopener">politique du dépôt</a>)</p>
 
-      <p>AnonForge est une application Android <strong>100% gratuite, open-source et hors-ligne</strong>.</p>
+      <p>AnonForge est une application Android <strong>100% gratuite, open-source et hors-ligne par défaut</strong> : les fonctions cœur (génération, coffre, export) ne requièrent aucun réseau. L'app ne se connecte que si vous activez l'intégration optionnelle SimpleLogin.</p>
 
       <h2>Résumé</h2>
       <ul class="success-list">
-        <li>Aucune donnée personnelle n'est collectée ou transmise.</li>
-        <li>Tout reste sur votre appareil (génération, stockage, alias).</li>
-        <li>Pas de tracking, pas d'analytics, pas de cookies.</li>
+        <li>Aucune donnée personnelle n'est collectée ou transmise par AnonForge.</li>
+        <li>Tout reste sur votre appareil (génération, stockage, historique d'alias).</li>
+        <li>Pas de tracking, pas d'analytics, pas de crash reporting, pas de cookies.</li>
         <li>Open-source sous licence Apache-2.0 — code auditable.</li>
       </ul>
 
       <h2>Stockage et chiffrement</h2>
       <ul>
-        <li>Base de données locale chiffrée avec SQLCipher (AES-256).</li>
-        <li>Clés cryptographiques gérées via Android Keystore.</li>
-        <li>Effacement mémoire après utilisation des données sensibles.</li>
+        <li>Base de données locale chiffrée au repos avec SQLCipher (AES-256).</li>
+        <li>Phrase de passe de la base générée aléatoirement et protégée par l'Android Keystore.</li>
+        <li>Effacement mémoire après utilisation des données sensibles ; presse-papiers marqué sensible et vidé automatiquement après 30 secondes.</li>
+        <li>Déverrouillage par biométrie ou PIN, verrouillage automatique paramétrable.</li>
       </ul>
 
-      <h2>Alias externes (email & téléphone)</h2>
-      <p>Les alias email (SimpleLogin) et téléphone (Hushed, OnOff, Sonetel) sont gérés par des services tiers que vous configurez vous-même. AnonForge n'a jamais accès à vos comptes ni à vos données réelles. Les clés API sont stockées chiffrées localement.</p>
+      <h2>Accès réseau</h2>
+      <ul>
+        <li>La permission <strong>INTERNET</strong> ne sert qu'à l'intégration optionnelle SimpleLogin, avec <strong>votre propre clé API</strong> stockée chiffrée localement.</li>
+        <li>Les numéros virtuels (Hushed, OnOff, etc.) sont obtenus par vous auprès de ces services : AnonForge ne s'y connecte jamais, il mémorise seulement les numéros que vous saisissez, chiffrés localement.</li>
+        <li>AnonForge n'a jamais accès à vos comptes tiers ni à vos données réelles.</li>
+      </ul>
 
       <h2>Dons volontaires</h2>
       <p>Les dons sont entièrement volontaires et gérés par Stripe (nous ne voyons jamais vos coordonnées bancaires). Aucun avantage ou limitation n'est lié aux dons — l'app reste gratuite et complète pour tous. Les dons ne sont pas déductibles fiscalement (vers un particulier).</p>
@@ -147,14 +154,16 @@
       <p>Pour toute demande relative à la confidentialité :</p>
       <div class="contact-links">
         <a href="https://github.com/AnonForge-EU/anonforge/issues" target="_blank" rel="noopener">📝 Ouvrir une Issue GitHub</a>
-        <a href="mailto:privacy@anonforge.eu">✉️ privacy@anonforge.eu</a>
       </div>
 
       <p><a href="index.html">Retour à l'accueil</a></p>
     </main>
 
     <footer>
-      © 2025 AnonForge — <a href="index.html">Accueil</a>
+      © 2025–2026 AnonForge —
+      <a href="index.html">Accueil</a> •
+      <a href="why-anonforge.html">Pourquoi AnonForge</a> •
+      <a href="https://github.com/AnonForge-EU/anonforge" target="_blank" rel="noopener noreferrer">GitHub</a>
     </footer>
   </div>
 </body>
